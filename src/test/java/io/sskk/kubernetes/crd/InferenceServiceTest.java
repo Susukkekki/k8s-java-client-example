@@ -107,6 +107,9 @@ public class InferenceServiceTest {
     }
 
 
+    /**
+     * @see https://github.com/fabric8io/kubernetes-client/blob/main/doc/CHEATSHEET.md#resource-typed-api
+     */
     @Test
     public void testListTypedInferenceService() {
         KubernetesClient client = new KubernetesClientBuilder().build();
@@ -118,6 +121,9 @@ public class InferenceServiceTest {
         assertEquals("sklearn", list.getItems().get(0).getSpec().getPredictor().getModel().getModelFormat().getName());
     }
 
+    /**
+     * @see https://github.com/fabric8io/kubernetes-client/blob/main/doc/CHEATSHEET.md#resource-typeless-api
+     */
     @Test
     public void testListTypessInferenceService() {
         ResourceDefinitionContext resourceDefinitionContext = new ResourceDefinitionContext.Builder()
