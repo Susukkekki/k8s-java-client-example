@@ -200,18 +200,6 @@ public class InferenceServiceTest {
 
         KubernetesClient client = new KubernetesClientBuilder().build();
 
-        // yaml does not work. It causes FileNotFound exception
-        // String rawYaml = ""
-        //     .concat("apiVersion: \"serving.kserve.io/v1beta1\"")
-        //     .concat("kind: \"InferenceService\"")
-        //     .concat("metadata:")
-        //     .concat("  name: \"test-2\"")
-        //     .concat("spec:")
-        //     .concat("  predictor:")
-        //     .concat("    model:")
-        //     .concat("      modelFormat:")
-        //     .concat("        name: sklearn")
-        //     .concat("      storageUri: \"gs://kfserving-examples/models/sklearn/1.0/model\"");
         String rawJson = ""
             .concat("{")
             .concat("  \"apiVersion\": \"serving.kserve.io/v1beta1\",")
